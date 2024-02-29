@@ -1,0 +1,26 @@
+CREATE DATABASE Groceries;
+GO
+
+USE Groceries;
+GO
+
+CREATE TABLE Products (
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Type NVARCHAR(50) NOT NULL,
+    Color NVARCHAR(50) NOT NULL,
+    Calories INT NOT NULL
+);
+
+GO
+
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (1, 'Green Apple', 'Fruit', 'Green', 55);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (2, 'Ripe Banana', 'Fruit', 'Yellow', 90);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (3, 'Baby Carrot', 'Vegetable', 'Orange', 35);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (4, 'Grape Tomato', 'Fruit', 'Red', 22);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (5, 'Iceberg Lettuce', 'Vegetable', 'Green', 10);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (6, 'Wild Strawberry', 'Fruit', 'Red', 30);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (7, 'Purple Broccoli', 'Vegetable', 'Purple', 40);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (8, 'Seedless Grape', 'Fruit', 'Green', 70);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (9, 'Fresh Spinach', 'Vegetable', 'Green', 20);
+INSERT INTO Products (Id, Name, Type, Color, Calories) VALUES (10, 'Sweet Blueberry', 'Fruit', 'Blue', 60);
