@@ -11,7 +11,6 @@ class Program
 
         string connectionString = ConfigurationManager.ConnectionStrings["TeaShop"].ConnectionString;
 
-
         // 1
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
