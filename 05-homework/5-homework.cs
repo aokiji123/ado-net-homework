@@ -220,7 +220,7 @@ class Program
 
             Console.WriteLine();
 
-            string[] coffeeTypes = { "Arabica", "Strong", "Bland" };
+            string[] coffeeTypes = { "Arabica", "Robusta", "Bland" };
             foreach (var coffeeType in coffeeTypes)
             {
                 var top3CoffeeByWeight = coffeeTable.AsEnumerable()
