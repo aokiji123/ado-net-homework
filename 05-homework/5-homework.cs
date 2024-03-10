@@ -98,7 +98,7 @@ class Program
         // 3
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM CoffeeShop JOIN Country ON Coffee.id_country = Country.id_country", connection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM CoffeeShop JOIN Country ON CoffeeShop.id_country = Country.id_country", connection);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
 
             DataSet dataSet = new DataSet();
@@ -192,14 +192,14 @@ class Program
             // Task 4
             DataTable coffeeTable = dataSet.Tables["CoffeeShop"];
 
-            var top3CountriesByCoffeeVariety = coffeeTable.AsEnumerable()
+            var top3CountriesByCoffeeTypes = coffeeTable.AsEnumerable()
                 .GroupBy(r => r.Field<string>("country_name"))
                 .Select(g => new { Country = g.Key, Count = g.Count() })
                 .OrderByDescending(g => g.Count)
                 .Take(3);
 
-            Console.WriteLine("Top 3 countries by coffee variety:");
-            foreach (var item in top3CountriesByCoffeeVariety)
+            Console.WriteLine("Top 3 countries by coffee types:");
+            foreach (var item in top3CountriesByCoffeeTypes)
                 Console.WriteLine(
                     $"Country: {item.Country,-10}" +
                     $"Amount of coffee types: {item.Count,-10}"
